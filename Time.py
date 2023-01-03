@@ -115,31 +115,42 @@ def brute_force(array):
     return result
 
 
-Size = int(input("Escolha o numero de pontos: "))
+Size = 500
+x_values_brute = []
+y_values_brute = []
+x_values_divide = []
+y_values_divide =[]
 
-coords = [(random.randint(1, 100000), random.randint(1, 100000)) for _ in range(Size)]
 
-brute_start = time.time()
-closest_brute = brute_force(coords)
-brute_end = time.time()
-print(closest_brute)
 
-divide_start = time.time()
-closest_divide = closest_pair(coords)
-divide_end = time.time()
-print(closest_divide)
+while Size <= 10000:
 
-print(brute_end - brute_start)
+    coords = [(random.randint(1, 100000), random.randint(1, 100000)) for _ in range(Size)]
+    
+    brute_start = time.time()
+    closest_brute = brute_force(coords)
+    brute_end = time.time()
+    x_values_brute.append(brute_end - brute_start)
+    y_values_brute.append(Size)
 
-print(divide_end - divide_start)
+    divide_start = time.time()
+    closest_divide = closest_pair(coords)
+    divide_end = time.time()
+    x_values_divide.append(divide_end - divide_start)
+    y_values_divide.append(Size)
+    
+    Size = Size + 1000
 
-print (closest_brute["p1"][0])
 
-x, y = zip(*coords)
-plt.scatter(x,y)
-x_values = [closest_brute["p1"][0], closest_brute["p2"][0]]
-y_values = [closest_brute["p1"][1], closest_brute["p2"][1]]
-plt.plot(x_values,y_values , color = 'r')
+print(x_values_brute, y_values_brute)
+print(x_values_divide, y_values_divide)
+
+#x, y = zip(*coords)
+#plt.scatter(x,y)
+#x_values = [closest_brute["p1"][0], closest_brute["p2"][0]]
+#y_values = [closest_brute["p1"][1], closest_brute["p2"][1]]
+plt.plot(x_values_brute,y_values_brute , color = 'r')
+plt.plot(x_values_divide,y_values_divide , color = 'b')
 plt.show()
 
 
