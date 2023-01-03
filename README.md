@@ -18,16 +18,19 @@ Para mostrar isso foi feito algumas interações aumentando a quantidade de pont
 ## Screenshots
 ![image](img1.png)
 ![image2](img2.png)
+![image3](img3.png)
+
 
 ## Instalação 
 **Linguagem**: Python<br>
 Istale Python seguindo recomendações padrões
-Instale as bibliotecas se nescessário:
-`pip install matplotlib`
-`pip install numpy`
+Instale as bibliotecas se nescessário:<br>
+`pip install matplotlib`<br>
+`pip install numpy`<br>
 
 ## Uso 
-Rode `python Time.py` dentro da pasta do repositorio e espere que demora um tempo para fazer todas as interações.
+Rode `python Time.py` dentro da pasta do repositorio e espere que demora um tempo para fazer todas as interações.<br>
+Se quiser, pode se alterar os valores de `Size` e `Size = Size + 1` para mudar a quantidade de interações no codigo na parte mostrada na terceira imagem.
 
 
 
